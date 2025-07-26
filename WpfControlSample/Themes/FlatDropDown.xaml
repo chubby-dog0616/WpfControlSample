@@ -1,0 +1,101 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="FlatDropDown" TargetType="ComboBox" >
+        <!-- 余計な背景や枠を消す -->
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <!-- 左上余白と下余白だけ確保 -->
+        <Setter Property="Padding" Value="3,2,0,2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <!-- 全体をトグル可能にする -->
+                        <ToggleButton x:Name="MainToggle"
+                                          IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          Background="{TemplateBinding Background}"
+                                          BorderThickness="0"
+                                          Focusable="False"
+                                          HorizontalAlignment="Stretch"
+                                          VerticalAlignment="Stretch">
+                            <!-- 下線＋影 -->
+                            <Border x:Name="Underline"
+                                        Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=ComboBox}}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        Background="{TemplateBinding Background}">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="2" ShadowDepth="2" Direction="270" Color="{Binding }"/>
+                                </Border.Effect>
+                                <!-- 二列レイアウト -->
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- 選択中アイテム -->
+                                    <ContentPresenter Grid.Column="0"
+                                                          Margin="{TemplateBinding Padding}"
+                                                          VerticalAlignment="Center"
+                                                          HorizontalAlignment="Left"
+                                                          Content="{TemplateBinding SelectionBoxItem}"
+                                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                                          ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"/>
+
+                                    <!-- 矢印（右端） -->
+                                    <Path Grid.Column="1"
+                                              Data="M0,0 L4,4 L8,0"
+                                              Stretch="Uniform"
+                                              Margin="0,0,10,0"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Right"
+                                              Stroke="{TemplateBinding Foreground}"
+                                              StrokeThickness="2"
+                                              Fill="Transparent"/>
+                                </Grid>
+                            </Border>
+                        </ToggleButton>
+
+                        <!-- ドロップダウンリスト -->
+                        <Popup x:Name="PART_Popup"
+                                   Placement="Bottom"
+                                   IsOpen="{Binding IsChecked, ElementName=MainToggle}"
+                                   AllowsTransparency="True"
+                                   Focusable="False"
+                                   PopupAnimation="Slide">
+                            <Border x:Name="PopupBorder"
+                                        Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=ComboBox}}"
+                                        Background="White"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="1"
+                                        SnapsToDevicePixels="True">
+                                <ScrollViewer SnapsToDevicePixels="True"
+                                                  MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                    <StackPanel IsItemsHost="True"
+                                                    KeyboardNavigation.DirectionalNavigation="Contained"/>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Grid>
+
+                    <!-- ホバー＆開閉時の見た目 -->
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Underline" Property="BorderBrush" Value="LightGray"/>
+                            <Setter Property="Foreground" Value="LightGray"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Underline" Property="Background" Value="#FFF0F0F0"/>
+                            <Setter TargetName="Underline" Property="BorderBrush" Value="DarkGray"/>
+                        </Trigger>
+                        <Trigger SourceName="MainToggle" Property="IsChecked" Value="True">
+                            <Setter TargetName="Underline" Property="BorderBrush" Value="Black"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

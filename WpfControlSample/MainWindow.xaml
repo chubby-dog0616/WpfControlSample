@@ -10,7 +10,12 @@
     <Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>
-    <Grid Background="Gray">
+    <StackPanel Background="Gray">
         <ToggleButton Style="{StaticResource MyToggleButton}" IsChecked="{Binding IsOn}" Width="100" Height="50"/>
-    </Grid>
+        <ComboBox Style="{StaticResource FlatDropDown}" Background="AliceBlue"  BorderBrush="Aqua">
+            <ComboBoxItem Content="Item 1" />
+            <ComboBoxItem Content="Item 2" />
+            <ComboBoxItem Content="Item 3" />
+        </ComboBox>
+    </StackPanel>
 </Window>

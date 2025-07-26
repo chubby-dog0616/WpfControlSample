@@ -14,8 +14,7 @@ namespace WpfControlSample.Converters
         {
             if (values[0] is double trackW && values[1] is double trackH)
             {
-                var diameter = trackH - 2 * Margin;
-                return Math.Max(0, trackW - diameter - Margin);
+
             }
             return 0;
         }
