@@ -1,29 +1,29 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!-- ========== Brand（ブランドカラー） ========== -->
-    <Color x:Key="BrandPrimaryColor">#00696C</Color>
+    <Color x:Key="BrandPrimaryColor">#80D4D7</Color>
     <SolidColorBrush x:Key="BrandPrimaryBrush" Color="{StaticResource BrandPrimaryColor}" />
 
-    <Color x:Key="BrandSecondaryColor">#4A6364</Color>
+    <Color x:Key="BrandSecondaryColor">#B0CCCC</Color>
     <SolidColorBrush x:Key="BrandSecondaryBrush" Color="{StaticResource BrandSecondaryColor}" />
 
-    <Color x:Key="BrandOnPrimaryColor">#FFFFFF</Color>
+    <Color x:Key="BrandOnPrimaryColor">#003738</Color>
     <SolidColorBrush x:Key="BrandOnPrimaryBrush" Color="{StaticResource BrandOnPrimaryColor}" />
 
     <!-- ========== Neutral（ベース／テキスト） ========== -->
-    <Color x:Key="BgWindowColor">#F4FBFA</Color>
+    <Color x:Key="BgWindowColor">#0E1415</Color>
     <SolidColorBrush x:Key="BgWindowBrush" Color="{StaticResource BgWindowColor}" />
 
-    <Color x:Key="BgSurfaceColor">#F4FBFA</Color>
+    <Color x:Key="BgSurfaceColor">#0E1415</Color>
     <SolidColorBrush x:Key="BgSurfaceBrush" Color="{StaticResource BgSurfaceColor}" />
 
-    <Color x:Key="FgPrimaryColor">#161D1D</Color>
+    <Color x:Key="FgPrimaryColor">#DDE4E3</Color>
     <SolidColorBrush x:Key="FgPrimaryBrush" Color="{StaticResource FgPrimaryColor}" />
 
-    <Color x:Key="FgSecondaryColor">#DAE4E4</Color>
+    <Color x:Key="FgSecondaryColor">#3F4949</Color>
     <SolidColorBrush x:Key="FgSecondaryBrush" Color="{StaticResource FgSecondaryColor}" />
 
-    <Color x:Key="BorderNeutralColor">#6F7979</Color>
+    <Color x:Key="BorderNeutralColor">#899393</Color>
     <SolidColorBrush x:Key="BorderNeutralBrush" Color="{StaticResource BorderNeutralColor}" />
 
     <Color x:Key="DisabledFgColor">#61000000</Color>
@@ -33,7 +33,7 @@
     <SolidColorBrush x:Key="DisabledBgBrush" Color="{StaticResource DisabledBgColor}" />
 
     <!-- ========== Semantic（状態色） ========== -->
-    <Color x:Key="InfoColor">#4D5F7C</Color>
+    <Color x:Key="InfoColor">#B5C7E9</Color>
     <SolidColorBrush x:Key="InfoBrush" Color="{StaticResource InfoColor}" />
 
     <Color x:Key="SuccessColor">#FF10893E</Color>
@@ -42,25 +42,25 @@
     <Color x:Key="WarningColor">#FFFFB900</Color>
     <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}" />
 
-    <Color x:Key="ErrorColor">#BA1A1A</Color>
+    <Color x:Key="ErrorColor">#FFB4AB</Color>
     <SolidColorBrush x:Key="ErrorBrush" Color="{StaticResource ErrorColor}" />
 
-    <Color x:Key="OnStatusColor">#FFFFFF</Color>
+    <Color x:Key="OnStatusColor">#690005</Color>
     <SolidColorBrush x:Key="OnStatusBrush" Color="{StaticResource OnStatusColor}" />
 
     <!-- ========== Interaction（操作ステート） ========== -->
-    <Color x:Key="HoverBgColor">#80D4D7</Color>
+    <Color x:Key="HoverBgColor">#005153</Color>
     <SolidColorBrush x:Key="HoverBgBrush" Color="{StaticResource HoverBgColor}" />
 
-    <Color x:Key="PressedBgColor">#80D4D7</Color>
+    <Color x:Key="PressedBgColor">#005153</Color>
     <SolidColorBrush x:Key="PressedBgBrush" Color="{StaticResource PressedBgColor}" />
 
     <Color x:Key="FocusBorderColor">#FF005FB8</Color>
     <SolidColorBrush x:Key="FocusBorderBrush" Color="{StaticResource FocusBorderColor}" />
 
-    <Color x:Key="SelectionBgColor">#D5E3FF</Color>
+    <Color x:Key="SelectionBgColor">#354763</Color>
     <SolidColorBrush x:Key="SelectionBgBrush" Color="{StaticResource SelectionBgColor}" />
 
-    <Color x:Key="SelectionFgColor">#354763</Color>
+    <Color x:Key="SelectionFgColor">#061C36</Color>
     <SolidColorBrush x:Key="SelectionFgBrush" Color="{StaticResource SelectionFgColor}" />
 </ResourceDictionary>
